@@ -16,7 +16,12 @@ public class JAXBExample {
 
         try {
 
-            File file = new File("C:\\JAXBexmp\\file.xml");
+            //File file = new File("C:\\JAXBexmp\\file.xml");
+
+            File file = new File(
+                    JAXBExample.class.getClassLoader().getResource("file.xml").getFile()
+            );
+
             JAXBContext jaxbContext = JAXBContext.newInstance(Customer.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 

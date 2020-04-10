@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Resource >
+    <Desc>Contains information about movies.</Desc>
+    <!-- Collection GET Request /movie -->
+    <Request method="GET">
+        <Desc>Get info of all movies with ratings greater than 3.</Desc>
+        <Sql id="wellRatedMovies">
+            SELECT name,rating FROM movie
+            where rating gt 3.0
+        </Sql>
+    </Request>
+
+</Resource>

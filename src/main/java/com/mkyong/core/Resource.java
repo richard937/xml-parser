@@ -5,64 +5,98 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-class Temp {
-    String Desc;
-
-    @XmlElement
-    public String getDesc() {
-        return Desc;
-    }
-
-    public void setName(String Desc) {
-        this.Desc = Desc;
-    }
-}
 
 @XmlRootElement
 @XmlType(propOrder = {"Desc", "Request"})
-public class Resource extends Temp{
+public class Resource {
 
-      class Request extends Temp{
-        String Sql;
-        String id;
-        String method;
+    FChild Desc;
+    SChild Request;
 
-         @XmlAttribute
-         public String geteMethod() {
-             return method;
-         }
+    @XmlElement
+    public FChild getFChild() {
+        return Desc;
+    }
 
-         public void setMethod(String method) {
-             this.method = method;
-         }
-
-         @XmlAttribute
-         public String getId() {
-             return id;
-         }
-
-         public void setId(String id) {
-             this.id = id;
-         }
-
-         @XmlElement
-         public String getSql() {
-             return Sql;
-         }
-
-         public void setDept(String Sql) {
-             this.Sql = Sql;
-         }
+    public void setFChild(FChild Desc) {
+        this.Desc = Desc;
     }
 
     @XmlElement
-    public Request getRequest() {
+    public SChild getSChild() {
         return Request;
     }
 
-    public void setRequest() {
-        final Request request = new Request();
+    public void setSChild(SChild Request) {
         this.Request = Request;
     }
-
 }
+
+public class FChild {
+    String info;
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+}
+
+
+@XmlType(propOrder={"Desc", "Sql"})
+public class SChild {
+
+    String method;
+    FChild Desc;
+    TChild Sql;
+
+    @XmlAttribute
+    public String geteMethod() {
+        return method;
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
+    }
+
+    public FChild getDesc() {
+        return Desc;
+    }
+
+    public void setDesc(FChild Desc) {
+        this.Desc = Desc;
+    }
+
+    public TChild getSql() {
+        return Sql;
+    }
+
+    public void setSql(TChild Sql) {
+        this.Sql = Sql;
+    }
+}
+
+public class TChild {
+    String id;
+    String sqlinfo;
+
+    @XmlAttribute
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+    
+    public String getSqlinfo() {
+        return sqlinfo;
+    }
+
+    public void setSqlinfo(String sqlinfo) {
+        this.sqlinfo = sqlinfo;
+    }
+}
+

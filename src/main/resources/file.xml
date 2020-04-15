@@ -4,5 +4,10 @@
     <dept>ECE</dept>
     <name>papun</name>
 </customer>
+<customer id="4101">
+    <age>22</age>
+    <dept>BEE</dept>
+    <name>foo</name>
+</customer>
 
 

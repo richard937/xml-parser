@@ -9,5 +9,10 @@
             where rating gt 3.0
         </Sql>
     </Request>
-
+     <Request method="POST">
+        <Desc>Get info of all movies with ratings greater than 3.</Desc>
+        <Sql>
+            Update movie set rating = 3.0
+        </Sql>
+    </Request>
 </Resource>

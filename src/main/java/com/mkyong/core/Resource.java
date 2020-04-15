@@ -4,6 +4,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import java.util.List;
 
 
 @XmlRootElement
@@ -11,7 +12,7 @@ import javax.xml.bind.annotation.XmlType;
 public class Resource {
 
     FChild Desc;
-    SChild Request;
+    List<SChild> Request;
 
     @XmlElement
     public FChild getFChild() {
@@ -23,11 +24,11 @@ public class Resource {
     }
 
     @XmlElement
-    public SChild getSChild() {
+    public List<SChild> getSChild() {
         return Request;
     }
 
-    public void setSChild(SChild Request) {
+    public void setSChild(List<SChild> Request) {
         this.Request = Request;
     }
 }
@@ -90,7 +91,7 @@ public class TChild {
     public void setId(String id) {
         this.id = id;
     }
-    
+
     public String getSqlinfo() {
         return sqlinfo;
     }
